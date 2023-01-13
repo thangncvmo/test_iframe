@@ -19,7 +19,7 @@ function fetchData() {
                 .then((data) => {
                     document.getElementById('loading').style.display = 'none';
                     processData(data, urlParams);
-                });
+                }).then(() => postHeightToParent());
         }
     });
 }
@@ -226,7 +226,6 @@ function processData(data, urlParams) {
         pricingTableRow.appendChild(planElement(item, mostPopular, enterprisePlan, urlParams));
         pricingTable[0].appendChild(pricingTableRow);
     })
-    postHeightToParent();
 }
 
 window.addEventListener('resize', function (event) {
@@ -236,11 +235,14 @@ window.addEventListener('resize', function (event) {
 
 function postHeightToParent() {
     const pricingTable = document.getElementsByTagName('pricing-table');
+    const pricingTableClient = pricingTable.length > 0 ? pricingTable[0].getBoundingClientRect() : null
     let message = { 
-        height: pricingTable[0].offsetHeight || document.body.offsetHeight, 
+        height: pricingTableClient.height || document.body.offsetHeight, 
         scrollHeight: document.body.scrollHeight, 
-        width: pricingTable[0].offsetHeight || document.body.offsetWidth,  
+        innerHeight: pricingTable[0].innerHeight || document.body.innerHeight, 
+        width: pricingTableClient.width || document.body.offsetWidth,  
         scrollWidth: document.body.scrollWidth,  
+        innerWidth: pricingTable[0].innerWidth || document.body.innerWidth,  
     };
     // window.top refers to parent window
     window.top.postMessage(message, "*");
