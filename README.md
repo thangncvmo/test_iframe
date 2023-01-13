@@ -24,10 +24,10 @@ Pricing tables for Parousya subscription plans
 
 - Embed this code where you need to display it.
 ```html
-<pricing-table iframe-src="https://thangncvmo.github.io/test_iframe/" price-api="https://go-api-dev.parousya.com/cms/stripe/prices" btn-target=https://www.parousya.com/sign-up.html></pricing-table>
+<pricing-table iframe-src="https://parousya.github.io/Pricing-tables/" price-api="https://go-api-dev.parousya.com/cms/stripe/prices" btn-target=https://www.parousya.com/sign-up.html></pricing-table>
 ```
 
 - Note: 
-    - iframe-src: Pricing table page link
-    - price-api: 
-    - btn-target
+    - `iframe-src`: Pricing table page link (https://parousya.github.io/Pricing-tables/)
+    - `price-api`: Stripe Product Price List API. It is provisioned by the environment, so it depends on the environment you use. Please set the correct value.
+    - `btn-target`: Destination when the button is clicked.
