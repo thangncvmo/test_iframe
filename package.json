@@ -1,0 +1,21 @@
+{
+  "name": "t",
+  "version": "1.0.0",
+  "description": "",
+  "main": "common.js",
+  "scripts": {
+    "run": "grunt"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "^1.5.3",
+    "grunt-run": "^0.8.1",
+    "grunt-shell": "^4.0.0",
+    "npm-bundle": "^3.0.3",
+    "uglify-js": "^3.17.4"
+  },
+  "devDependencies": {
+    "grunt-inline": "^0.3.7"
+  }
+}

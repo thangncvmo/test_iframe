@@ -1,0 +1,316 @@
+.plan .card {
+    border-radius: 12px;
+    margin-bottom: 0
+}
+
+.plan .card .card-body {
+    padding: 30px
+}
+
+.plan .plan__header h5 {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center
+}
+
+.plan .plan__header h5 .popularPlan {
+    border-radius: 4px;
+    padding: 2px 10px;
+    margin-left: 10px;
+    background-color: #3086ff;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden
+}
+
+.plan .plan__header h5 .popularPlan:before {
+    position: absolute;
+    content: "";
+    top: -150px;
+    right: 0;
+    bottom: 0;
+    left: -60%;
+    height: 90px;
+    width: 200px;
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+    display: block;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, hsla(0, 0%, 100%, 0)), color-stop(25%, hsla(0, 0%, 100%, .2)), color-stop(50%, hsla(0, 0%, 100%, .3)), color-stop(75%, hsla(0, 0%, 100%, .2)), to(hsla(0, 0%, 100%, 0)));
+    background: -webkit-linear-gradient(top, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, .2) 25%, hsla(0, 0%, 100%, .3) 50%, hsla(0, 0%, 100%, .2) 75%, hsla(0, 0%, 100%, 0));
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, .2) 25%, hsla(0, 0%, 100%, .3) 50%, hsla(0, 0%, 100%, .2) 75%, hsla(0, 0%, 100%, 0));
+    -webkit-animation: popularPlan-animation 2s ease-out 2s infinite;
+    animation: popularPlan-animation 2s ease-out 2s infinite
+}
+
+@-webkit-keyframes popularPlan-animation {
+    to {
+        top: 150px;
+        left: 60%
+    }
+}
+
+@keyframes popularPlan-animation {
+    to {
+        top: 150px;
+        left: 60%
+    }
+}
+
+.plan .plan__header p {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #1a1a1a;
+    opacity: .7;
+    height: 65px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical
+}
+
+.plan.currentPlan .card {
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #3086ff;
+    position: relative
+}
+
+.plan.currentPlan .card:before {
+    content: "Current Plan";
+    position: absolute;
+    border-radius: 12px 12px 0 0;
+    top: -36px;
+    left: -1px;
+    width: calc(100% + 2px);
+    background-color: #3086ff;
+    border: 1px solid #3086ff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.plan .plan__price {
+    color: #1a1a1a;
+    margin-bottom: 16px;
+    height: 151.19px
+}
+
+.plan .plan__price .plan__price_unit {
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 16px
+}
+
+.plan .plan__price p {
+    opacity: .7;
+    margin: 0;
+    font-size: 14px
+}
+
+.plan .plan__price .plan__price__content {
+    display: flex;
+    align-items: center;
+    line-height: 1.2
+}
+
+.plan .plan__price .plan__price__content span:first-child {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-right: 4px
+}
+
+.plan .plan__price .plan__price__content span:last-child {
+    font-size: 14px;
+    color: #1a1a1a;
+    opacity: .7;
+    line-height: 1
+}
+
+.plan__price__preview_content .popover {
+    background-color: #fff;
+    border-color: #e9e9e9;
+    box-shadow: 0 0 .875rem 0 rgb(53 64 82/5%)
+}
+
+.plan__price__preview_content .arrow:before {
+    border-top-color: #e9e9e9 !important
+}
+
+.planCheckout__price__preview_content__inner {
+    font-size: 14px;
+    color: #1a1a1a;
+    opacity: .7;
+}
+
+.plan .plan__price .plan__price__preview {
+    display: flex;
+    color: #1a1a1a;
+    opacity: .7;
+    margin-top: 8px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    align-items: center;
+    cursor: pointer
+}
+
+.plan .plan__price .plan__price__preview svg {
+    font-size: 12px;
+    margin-right: 8px
+}
+
+.plan .plan__price .plan__price__preview span {
+    border-bottom: 1px dotted;
+    line-height: 1
+}
+
+.plan .plan__button button {
+    font-weight: 500
+}
+
+.plan .plan__include p {
+    margin: 12px 0;
+    color: #1a1a1a
+}
+
+.plan .plan__include li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 14px
+}
+
+.plan .plan__include li:last-child,
+.plan .plan__include ul {
+    margin-bottom: 0 !important
+}
+
+.plan .plan__include li .plan__include__icon {
+    min-width: 28px;
+    float: left
+}
+
+.plan .plan__include li .plan__include__icon svg {
+    font-size: 12px;
+    fill-opacity: .7;
+    width: 15px;
+    height: 15px;
+}
+
+.planScreen__header {
+    margin-bottom: 1.75rem;
+    margin-top: 1.2rem
+}
+
+.planScreen__header h1 {
+    font-weight: 700
+}
+
+.planScreen__header p {
+    margin: 0
+}
+
+.planScreen__header button {
+    font-size: 18px;
+    padding: 0
+}
+
+.planScreen {
+    position: relative
+}
+
+.planScreen .plan__back {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.planScreen .plan__back.plan__back-responsive {
+    position: absolute;
+    top: 1.2rem
+}
+
+.planScreen .plan__back button,
+.planScreen .plan__back button:focus,
+.planScreen .plan__back button:hover {
+    background: none !important;
+    color: #1a1a1a !important;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-weight: 600;
+    font-size: 16px;
+    opacity: .7
+}
+
+.planScreen .plan__back button svg {
+    margin-right: 8px
+}
+
+.container-responsive {
+    padding: 0 150px
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+}
+
+.lds-ring {
+    z-index: 12;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #1a1a1a;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #1a1a1a transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
