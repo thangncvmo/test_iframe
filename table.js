@@ -190,7 +190,7 @@ function planHeader(data, mostPopular) {
 
 function planElement(data, mostPopular, enterprisePlan, urlParams) {
     const prNode = document.createElement("div");
-    prNode.classList.add('mt-4', 'mt-xl-0', 'plan', 'col-12', 'col-md-6', 'col-lg-4', 'col-xl-3');
+    prNode.classList.add('mt-4', 'mt-xl-0', 'plan', 'col-12', 'col-sm-6', 'col-md-4', 'col-lg-3', 'col-xl-3');
 
     const cardNode = document.createElement("div");
     cardNode.classList.add('h-100', 'card');

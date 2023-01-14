@@ -1,3 +1,7 @@
+body {
+    background-color: unset;
+}
+
 .plan .card {
     border-radius: 12px;
     margin-bottom: 0

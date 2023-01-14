@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 iframe.setAttribute('scrolling', 'no');
                 iframe.setAttribute('style', 'overflow:hidden;height:100%;width:100%');
                 iframe.src = iframeFullSrc;
+                pricingTable[0].replaceChildren();
                 pricingTable[0].appendChild(iframe);
             } else {
                 console.log('The pricing-table tag requires the following attributes: btn-target, price-api, iframe-src');
