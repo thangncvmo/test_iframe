@@ -64,11 +64,11 @@ Pricing tables for Parousya subscription plans
     eg: 
       ```shell
       // Production env
-      register-target="https://www.parousya.com/sign-up.html"
+      contact-us-target="https://www.parousya.com/sign-up.html"
         
       // Staging env
-      register-target="https://www.parousya.com/sign-up.html"
+      contact-us-target="https://www.parousya.com/sign-up.html"
       
       // Dev env
-      register-target="https://www.parousya.com/sign-up.html"
+      contact-us-target="https://www.parousya.com/sign-up.html"
       ```
