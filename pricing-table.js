@@ -17,9 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (pricingTable.length > 0) {
             const iframeSrc = pricingTable[0].getAttribute('iframe-src');
             const priceApi = pricingTable[0].getAttribute('price-api');
-            const btnTarget = pricingTable[0].getAttribute('btn-target');
-            if (iframeSrc && priceApi && btnTarget) {
-                const iframeFullSrc = `${iframeSrc}?price_api=${priceApi}&target=${btnTarget}`;
+            const btnTarget = pricingTable[0].getAttribute('register-target');
+            const contactUsTarget = pricingTable[0].getAttribute('contact-us-target');
+            if (iframeSrc && priceApi && btnTarget && contactUsTarget) {
+                const iframeFullSrc = `${iframeSrc}?price_api=${priceApi}&target=${btnTarget}&contact_us_target=${contactUsTarget}`;
                 const iframe = document.createElement("iframe");
                 iframe.setAttribute('frameborder', '0');
                 iframe.setAttribute('scrolling', 'no');
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 pricingTable[0].replaceChildren();
                 pricingTable[0].appendChild(iframe);
             } else {
-                console.log('The pricing-table tag requires the following attributes: btn-target, price-api, iframe-src');
+                console.log('The pricing-table tag requires the following attributes: btn-target, price-api, iframe-src, contact-us-target');
             }
         } else {
             console.log('Tag pricing-table could not be found.');

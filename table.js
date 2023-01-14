@@ -62,19 +62,21 @@ function featureSvgIcon() {
     return cardFeatureItemSvg;
 }
 
-function cardButton(target, data, enterprisePlan) {
+function cardButton(urlParams, data, enterprisePlan) {
     const cardButton = document.createElement("div");
     cardButton.classList.add('plan__button');
     const cardButtonA = document.createElement("a");
     cardButtonA.classList.add('btn', 'btn-primary', 'btn-lg', 'btn-block');
     let textContent = 'Start Trial'
+    let hrefTarget = urlParams.target;
     if (enterprisePlan.includes(data.product.id)) {
         textContent = 'Contact Us';
+        hrefTarget = urlParams.contact_us_target;
     } else if (calPriceAmount(data) == 0) {
         textContent = 'Start Free';
     }
     cardButtonA.textContent = textContent;
-    cardButtonA.setAttribute('href', target);
+    cardButtonA.setAttribute('href', hrefTarget);
     cardButtonA.setAttribute('target', '_top');
     cardButton.appendChild(cardButtonA);
     return cardButton
@@ -201,7 +203,7 @@ function planElement(data, mostPopular, enterprisePlan, urlParams) {
     cardContainer.appendChild(planHeader(data, mostPopular));
 
     cardContainer.appendChild(priceElement(data, enterprisePlan));
-    cardContainer.appendChild(cardButton(urlParams.target, data, enterprisePlan));
+    cardContainer.appendChild(cardButton(urlParams, data, enterprisePlan));
 
     if (data.product.metadata.feature_list) {
         cardContainer.appendChild(featureListItem(data.product.metadata.feature_list));
