@@ -73,12 +73,12 @@ body {
     margin-bottom: 0;
     color: #1a1a1a;
     opacity: .7;
-    height: 65px;
+    height: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
     -webkit-box-orient: vertical
 }
 
@@ -317,4 +317,10 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+
+[class*="col-"] {
+    padding-right: 10px;
+    padding-left: 10px;
 }

@@ -174,7 +174,7 @@ function priceElement(data, enterprisePlan) {
 
 function planHeader(data, mostPopular) {
     const cardHeader = document.createElement("div");
-    cardHeader.classList.add('mb-4', 'plan__header');
+    cardHeader.classList.add('mb-3', 'plan__header');
 
     const cardHeaderName = document.createElement("h5");
     cardHeaderName.textContent = data.product.name;
