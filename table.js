@@ -41,10 +41,12 @@ function pricePriviewContent(data) {
     data.tiers.map((item, idx) => {
         const cardPricePreviewItem = document.createElement("div");
         let textContent = "";
-        if (idx == 0) {
-            textContent = `First ${item.up_to || '∞'}: $${(item.unit_amount || 0) / 100} per unit + $${(item.flat_amount || 0) / 100}`
+        const unitAmount = item.unit_amount.toString() === item.unit_amount_decimal.toString() ? item.unit_amount : parseFloat(item.unit_amount_decimal)
+        if (idx === 0) {
+            const flatAmount = item.flat_amount.toString() === item.flat_amount_decimal.toString() ? item.flat_amount : parseFloat(item.flat_amount_decimal)
+            textContent = `First ${item.up_to || '∞'}: $${(unitAmount || 0) / 100} per unit + $${(flatAmount || 0) / 100}`
         } else {
-            textContent = `Next ${item.up_to || '∞'}: $${(item.unit_amount || 0) / 100} per unit`
+            textContent = `Next ${item.up_to || '∞'}: $${(unitAmount || 0) / 100} per unit`
         }
         cardPricePreviewItem.textContent = textContent;
         cardPricePreview.appendChild(cardPricePreviewItem);
@@ -238,13 +240,13 @@ window.addEventListener('resize', function (event) {
 function postHeightToParent() {
     const pricingTable = document.getElementsByTagName('pricing-table');
     const pricingTableClient = pricingTable.length > 0 ? pricingTable[0].getBoundingClientRect() : null
-    let message = { 
-        height: pricingTableClient.height || document.body.offsetHeight, 
-        scrollHeight: document.body.scrollHeight, 
-        innerHeight: pricingTable[0].innerHeight || document.body.innerHeight, 
-        width: pricingTableClient.width || document.body.offsetWidth,  
-        scrollWidth: document.body.scrollWidth,  
-        innerWidth: pricingTable[0].innerWidth || document.body.innerWidth,  
+    let message = {
+        height: pricingTableClient.height || document.body.offsetHeight,
+        scrollHeight: document.body.scrollHeight,
+        innerHeight: pricingTable[0].innerHeight || document.body.innerHeight,
+        width: pricingTableClient.width || document.body.offsetWidth,
+        scrollWidth: document.body.scrollWidth,
+        innerWidth: pricingTable[0].innerWidth || document.body.innerWidth,
     };
     // window.top refers to parent window
     window.top.postMessage(message, "*");
